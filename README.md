@@ -1,6 +1,33 @@
 # RxErrorHandler
 ##error handle of Rxjava
 
+##Step 1
+```
+  RxErrorHandler rxErrorHandler = RxErrorHandler
+                .builder()
+                .with(this)
+                .responseErroListener(new ResponseErroListener() {
+                    @Override
+                    public void handleResponseError(Context context, Exception e) {
+                        Log.w(TAG, "error handle");
+                    }
+                }).build();
+```
+
+##Step 2
+```
+  Observable
+            .error(new Exception("erro"))
+            .retryWhen(new RetryWithDelay(3, 2))//retry(http connect timeout) 
+            .subscribe(new ErrorHandleSubscriber<Object>(rxErrorHandler) {
+                    @Override
+                    public void onNext(Object o) {
+
+                    }
+
+                });
+```
+
 ##About Me 
 * **Email**: jess.yan.effort@gmail.com
 
