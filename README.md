@@ -10,7 +10,7 @@
                     @Override
                     public void handleResponseError(Context context, Exception e) {
                         Log.w(TAG, "error handle");
-                    }
+                    } 
                 }).build();
 ```
 
