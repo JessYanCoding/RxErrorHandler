@@ -3,7 +3,7 @@
 
 ##Step 1
 ```
-  RxErrorHandler rxErrorHandler = RxErrorHandler
+  RxErrorHandler rxErrorHandler = RxErrorHandler 
                 .builder()
                 .with(this)
                 .responseErroListener(new ResponseErroListener() {
