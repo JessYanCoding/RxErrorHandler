@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).build();
 
-
         Observable
                 .error(new Exception("erro"))
                 .retryWhen(new RetryWithDelay(3, 2))//retry(http connect timeout)
