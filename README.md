@@ -10,7 +10,6 @@
 dependencies {
     compile 'me.jessyan:rxerrorhandler:1.0.1'
 }
-
 ```
 
 ## Step 2
