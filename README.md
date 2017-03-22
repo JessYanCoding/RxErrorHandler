@@ -6,10 +6,12 @@
 ## error handle of Rxjava
 
 ## Step 1
-
+```
 dependencies {
     compile 'me.jessyan:rxerrorhandler:1.0'
 }
+
+```
 
 ## Step 2
 ```
