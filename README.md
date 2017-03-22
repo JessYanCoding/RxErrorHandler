@@ -3,9 +3,15 @@
 [ ![License](http://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square) ](http://www.apache.org/licenses/LICENSE-2.0)
 [ ![Download](https://api.bintray.com/packages/jessyancoding/maven/rxerrorhandler/images/download.svg) ](https://bintray.com/jessyancoding/maven/rxerrorhandler/_latestVersion)
 
-##error handle of Rxjava
+## error handle of Rxjava
 
-##Step 1
+## Step 1
+
+dependencies {
+    compile 'me.jessyan:rxerrorhandler:1.0'
+}
+
+## Step 2
 ```
   RxErrorHandler rxErrorHandler = RxErrorHandler 
                 .builder()
@@ -18,7 +24,7 @@
                 }).build();
 ```
 
-##Step 2
+## Step 3
 ```
   Observable
             .error(new Exception("erro"))
@@ -32,13 +38,13 @@
                 });
 ```
 
-##About Me
+## About Me
 * **Email**: <jess.yan.effort@gmail.com>  
 * **Home**: <http://jessyan.me>
 * **掘金**: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
 * **简书**: <http://www.jianshu.com/u/1d0c0bc634db>  
 
-##License
+## License
 ``` 
  Copyright 2016, jessyan               
   
