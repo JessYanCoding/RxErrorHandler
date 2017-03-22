@@ -13,6 +13,7 @@ public interface ResponseErroListener {
         @Override
         public void handleResponseError(Context context, Exception e) {
 
+
         }
     };
 }
