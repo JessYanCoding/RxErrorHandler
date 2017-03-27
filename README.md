@@ -1,7 +1,7 @@
 # RxErrorHandler
+[ ![Bintray](https://img.shields.io/badge/bintray-v1.0.1-brightgreen.svg) ](https://bintray.com/jessyancoding/maven/rxerrorhandler/1.0.1/link)
 [ ![API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat-square) ](https://developer.android.com/about/versions/android-4.0.3.html)
 [ ![License](http://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square) ](http://www.apache.org/licenses/LICENSE-2.0)
-[ ![Download](https://api.bintray.com/packages/jessyancoding/maven/rxerrorhandler/images/download.svg?version=1.0.1) ](https://bintray.com/jessyancoding/maven/rxerrorhandler/1.0.1/link)
 
 ## Error Handle Of Rxjava
 
