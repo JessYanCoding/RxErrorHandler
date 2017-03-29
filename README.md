@@ -6,6 +6,7 @@
 ## Error Handle Of Rxjava
 
 ## Step 1
+
 ```
 dependencies {
     compile 'me.jessyan:rxerrorhandler:1.0.1'
@@ -13,6 +14,7 @@ dependencies {
 ```
 
 ## Step 2
+
 ```
   RxErrorHandler rxErrorHandler = RxErrorHandler 
                 .builder()
@@ -26,6 +28,7 @@ dependencies {
 ```
 
 ## Step 3
+
 ```
   Observable
             .error(new Exception("erro"))
