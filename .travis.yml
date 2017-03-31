@@ -1,17 +1,25 @@
 language: android
 jdk: oraclejdk8
-script: "./gradlew build"
+sudo: required
+
+env:
+  global:
+    - ANDROID_API_LEVEL=25
+    - ANDROID_BUILD_TOOLS_VERSION=25.0.2
+
 android:
   components:
     # The BuildTools version used by your project
-    - build-tools-25.0.2
+    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
     - platform-tools
     - extra-android-m2repository
+    - extra-google-m2repository
     - extra-google-android-support
     - tools
 
     # The SDK version used to compile your project
-    - android-25
+    - android-$ANDROID_API_LEVEL
   licenses:
     - '.+'
 
+script: "./gradlew build"
