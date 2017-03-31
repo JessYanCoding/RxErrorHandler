@@ -9,9 +9,9 @@ env:
 android:
   components:
     # The BuildTools version used by your project
-    - tools
     - platform-tools
     - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+    - tools
     - extra-android-m2repository
     - extra-google-android-support
 
