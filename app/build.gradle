@@ -25,7 +25,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.1.1'
-//    compile 'me.jessyan:rxerrorhandler:1.0.1'
-    compile project(':rxerrorhandler')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'me.jessyan:rxerrorhandler:2.0'
+//    compile project(':rxerrorhandler')
 }
