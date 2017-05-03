@@ -10,11 +10,11 @@
 
 ```
 dependencies {
-    compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava2
+    compile 'me.jessyan:rxerrorhandler:2.0' //rxjava2
 }
 
 dependencies {
-    compile 'me.jessyan:rxerrorhandler:2.0' //rxjava1
+    compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
 }
 
 ```
