@@ -21,7 +21,7 @@ public class RxErrorHandler {
         return new Builder();
     }
 
-    public ErrorHandlerFactory getmHandlerFactory() {
+    public ErrorHandlerFactory getHandlerFactory() {
         return mHandlerFactory;
     }
 
