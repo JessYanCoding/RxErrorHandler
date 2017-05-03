@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import io.reactivex.Observable;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
 import me.jessyan.rxerrorhandler.handler.RetryWithDelay;
 import me.jessyan.rxerrorhandler.handler.listener.ResponseErroListener;
-import rx.Observable;
 
 public class MainActivity extends AppCompatActivity {
     private final String TAG = getClass().getSimpleName();
@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onNext(Object o) {
 
                     }
-
                 });
     }
 }
