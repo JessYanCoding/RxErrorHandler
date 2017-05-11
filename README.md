@@ -10,7 +10,7 @@
 
 ```
 dependencies {
-    compile 'me.jessyan:rxerrorhandler:2.0' //rxjava2
+    compile 'me.jessyan:rxerrorhandler:2.0.1' //rxjava2
 }
 
 dependencies {
