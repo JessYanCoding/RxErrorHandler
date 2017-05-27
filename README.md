@@ -1,5 +1,5 @@
 # RxErrorHandler
-[ ![Bintray](https://img.shields.io/badge/bintray-v2.0.1-brightgreen.svg) ](https://bintray.com/jessyancoding/maven/rxerrorhandler/2.0.1/link)
+[ ![Bintray](https://img.shields.io/badge/bintray-v2.0.2-brightgreen.svg) ](https://bintray.com/jessyancoding/maven/rxerrorhandler/2.0.2/link)
 [ ![Build Status](https://travis-ci.org/JessYanCoding/RxErrorHandler.svg?branch=master) ](https://travis-ci.org/JessYanCoding/RxErrorHandler)
 [ ![API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat-square) ](https://developer.android.com/about/versions/android-4.0.3.html)
 [ ![License](http://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square) ](http://www.apache.org/licenses/LICENSE-2.0)
@@ -10,7 +10,7 @@
 
 ```
 dependencies {
-    compile 'me.jessyan:rxerrorhandler:2.0.1' //rxjava2
+    compile 'me.jessyan:rxerrorhandler:2.0.2' //rxjava2
 }
 
 dependencies {

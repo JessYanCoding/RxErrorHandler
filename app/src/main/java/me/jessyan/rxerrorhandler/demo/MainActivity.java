@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
                 .with(this)
                 .responseErroListener(new ResponseErroListener() {
                     @Override
-                    public void handleResponseError(Context context, Exception e) {
+                    public void handleResponseError(Context context, Throwable t) {
                         Log.w(TAG, "error handle");
                     }
                 }).build();
