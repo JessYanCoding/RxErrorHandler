@@ -3,7 +3,7 @@ package me.jessyan.rxerrorhandler.core;
 import android.content.Context;
 
 import me.jessyan.rxerrorhandler.handler.ErrorHandlerFactory;
-import me.jessyan.rxerrorhandler.handler.listener.ResponseErroListener;
+import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener;
 
 /**
  * Created by jess on 9/2/16 13:27
@@ -27,7 +27,7 @@ public class RxErrorHandler {
 
     public static final class Builder {
         private Context context;
-        private ResponseErroListener responseErroListener;
+        private ResponseErrorListener mResponseErrorListener;
         private ErrorHandlerFactory errorHandlerFactory;
 
         private Builder() {
@@ -38,19 +38,19 @@ public class RxErrorHandler {
             return this;
         }
 
-        public Builder responseErroListener(ResponseErroListener responseErroListener) {
-            this.responseErroListener = responseErroListener;
+        public Builder responseErrorListener(ResponseErrorListener responseErrorListener) {
+            this.mResponseErrorListener = responseErrorListener;
             return this;
         }
 
         public RxErrorHandler build() {
             if (context == null)
-                throw new IllegalStateException("context is required");
+                throw new IllegalStateException("Context is required");
 
-            if (responseErroListener == null)
-                throw new IllegalStateException("responseErroListener is required");
+            if (mResponseErrorListener == null)
+                throw new IllegalStateException("ResponseErrorListener is required");
 
-            this.errorHandlerFactory = new ErrorHandlerFactory(context, responseErroListener);
+            this.errorHandlerFactory = new ErrorHandlerFactory(context, mResponseErrorListener);
 
             return new RxErrorHandler(this);
         }

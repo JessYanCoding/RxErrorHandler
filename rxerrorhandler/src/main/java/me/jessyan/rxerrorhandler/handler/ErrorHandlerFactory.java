@@ -2,7 +2,7 @@ package me.jessyan.rxerrorhandler.handler;
 
 import android.content.Context;
 
-import me.jessyan.rxerrorhandler.handler.listener.ResponseErroListener;
+import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener;
 
 /**
  * Created by jess on 9/2/16 13:47
@@ -11,10 +11,10 @@ import me.jessyan.rxerrorhandler.handler.listener.ResponseErroListener;
 public class ErrorHandlerFactory {
     public final String TAG = this.getClass().getSimpleName();
     private Context mContext;
-    private ResponseErroListener mResponseErroListener;
+    private ResponseErrorListener mResponseErrorListener;
 
-    public ErrorHandlerFactory(Context mContext, ResponseErroListener mResponseErroListener) {
-        this.mResponseErroListener = mResponseErroListener;
+    public ErrorHandlerFactory(Context mContext, ResponseErrorListener mResponseErrorListener) {
+        this.mResponseErrorListener = mResponseErrorListener;
         this.mContext = mContext;
     }
 
@@ -23,6 +23,6 @@ public class ErrorHandlerFactory {
      * @param throwable
      */
     public void handleError(Throwable throwable) {
-        mResponseErroListener.handleResponseError(mContext, throwable);
+        mResponseErrorListener.handleResponseError(mContext, throwable);
     }
 }

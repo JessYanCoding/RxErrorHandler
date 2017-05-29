@@ -25,7 +25,7 @@ dependencies {
   RxErrorHandler rxErrorHandler = RxErrorHandler 
                 .builder()
                 .with(this)
-                .responseErroListener(new ResponseErroListener() {
+                .responseErrorListener(new ResponseErroListener() {
                     @Override
                     public void handleResponseError(Context context, Exception e) {
                         Log.w(TAG, "error handle");

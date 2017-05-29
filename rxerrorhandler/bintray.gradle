@@ -1,25 +1,93 @@
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
 
-allprojects {
-    repositories {
-        jcenter()
+Properties properties = new Properties()
+boolean isHasFile = false
+if (project.rootProject.findProject('local.properties') != null){
+    isHasFile = true
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+}
+
+def gitUrl = 'https://github.com/JessYanCoding/RxErrorHandler.git'   // Git仓库的url
+def siteUrl = 'https://github.com/JessYanCoding/RxErrorHandler'   // 项目的主页
+
+version = "2.0.2"
+group = "me.jessyan"
+
+
+bintray {
+    user = isHasFile ? properties.getProperty("bintray.user") : System.getenv("bintray_user")
+    key = isHasFile ? properties.getProperty("bintray.apikey") : System.getenv("bintray_apikey")
+
+    pkg {
+        repo = 'maven'
+        name = 'RxErrorHandler'
+        licenses = ["Apache-2.0"]
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        publish = true // 是否是公开项目。
+
+        version {
+            name = "2.0.2"
+            desc = 'Error Handle Of Rxjava.'
+            released = new Date()
+            vcsTag = 'v2.0.2'
+            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+        }
     }
-    tasks.withType(Javadoc) {
-        options{ encoding "UTF-8"
-            charSet 'UTF-8'
-            links "http://docs.oracle.com/javase/7/docs/api"
+    configurations = ['archives']
+}
+
+
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                // Add your description here
+                name 'RxErrorHandler'
+                description 'Error Handle Of Rxjava.'
+                url siteUrl
+                // Set your license
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'JessYanCoding'        //填写bintray或者github的用户名
+                        name 'jessyan'         //姓名，可以是中文
+                        email 'jess.yan.effort@gmail.com'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
         }
     }
 }
 
-
-def siteUrl = 'https://github.com/JessYanCoding/RxErrorHandler'   // 项目的主页
-
-publish {
-    userOrg = 'jessyancoding'      //bintray注册的用户名
-    groupId = 'me.jessyan'         //compile引用时的第1部分groupId
-    artifactId = 'rxerrorhandler'     //compile引用时的第2部分项目名
-    publishVersion = '2.0.2'    //compile引用时的第3部分版本号
-    desc = 'Error Handle Of Rxjava'
-    website = siteUrl
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    failOnError false
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
 }

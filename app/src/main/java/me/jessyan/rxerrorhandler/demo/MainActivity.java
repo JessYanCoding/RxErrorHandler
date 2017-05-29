@@ -9,7 +9,7 @@ import io.reactivex.Observable;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
 import me.jessyan.rxerrorhandler.handler.RetryWithDelay;
-import me.jessyan.rxerrorhandler.handler.listener.ResponseErroListener;
+import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener;
 
 public class MainActivity extends AppCompatActivity {
     private final String TAG = getClass().getSimpleName();
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         RxErrorHandler rxErrorHandler = RxErrorHandler
                 .builder()
                 .with(this)
-                .responseErroListener(new ResponseErroListener() {
+                .responseErrorListener(new ResponseErrorListener() {
                     @Override
                     public void handleResponseError(Context context, Throwable t) {
                         Log.w(TAG, "error handle");
