@@ -8,7 +8,7 @@
 
 ## Step 1
 
-```
+``` gradle
 dependencies {
     compile 'me.jessyan:rxerrorhandler:2.0.2' //rxjava2
 }
@@ -21,7 +21,7 @@ dependencies {
 
 ## Step 2
 
-```
+``` java
   RxErrorHandler rxErrorHandler = RxErrorHandler 
                 .builder()
                 .with(this)
@@ -35,7 +35,7 @@ dependencies {
 
 ## Step 3
 
-```
+``` java
   Observable
             .error(new Exception("erro"))
             .retryWhen(new RetryWithDelay(3, 2))//retry(http connect timeout) 
