@@ -48,6 +48,12 @@ dependencies {
                 });
 ```
 
+## ProGuard
+```
+ -keep class me.jessyan.rxerrorhandler.** { *; }
+ -keep interface me.jessyan.rxerrorhandler.** { *; }
+```
+
 ## About Me
 * **Email**: <jess.yan.effort@gmail.com>  
 * **Home**: <http://jessyan.me>
