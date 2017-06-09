@@ -6,7 +6,7 @@
 
 ## Error Handle Of Rxjava
 
-## Step 1
+## Download
 
 ``` gradle
 dependencies {
@@ -19,8 +19,8 @@ dependencies {
 
 ```
 
-## Step 2
-
+## Usage
+### Step 1
 ``` java
   RxErrorHandler rxErrorHandler = RxErrorHandler 
                 .builder()
@@ -33,7 +33,7 @@ dependencies {
                 }).build();
 ```
 
-## Step 3
+### Step 2
 
 ``` java
   Observable
