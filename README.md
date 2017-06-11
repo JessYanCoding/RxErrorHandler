@@ -24,6 +24,11 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
                     @Override
                     public void handleResponseError(Context context, Throwable t) {
                         Log.w(TAG, "error handle");
+                        if (t instanceof UnknownHostException) {
+                            //Do something
+                        }else if (t instanceof SocketTimeoutException) {
+                            //Do something
+                        }//Handle other Exception
                     } 
                 }).build();
 ```
