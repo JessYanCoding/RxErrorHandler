@@ -20,7 +20,7 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
   RxErrorHandler rxErrorHandler = RxErrorHandler 
                 .builder()
                 .with(this)
-                .responseErrorListener(new ResponseErroListener() {
+                .responseErrorListener(new ResponseErrorListener() {
                     @Override
                     public void handleResponseError(Context context, Throwable t) {
                         Log.w(TAG, "error handle");
