@@ -6,36 +6,36 @@
 
 ## Error Handle Of Rxjava
 
-## Step 1
+## Download
 
-```
-dependencies {
-    compile 'me.jessyan:rxerrorhandler:2.0.2' //rxjava2
-}
+``` gradle
+compile 'me.jessyan:rxerrorhandler:2.0.2' //rxjava2
 
-dependencies {
-    compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
-}
-
+compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
 ```
 
-## Step 2
-
-```
+## Usage
+### Step 1
+``` java
   RxErrorHandler rxErrorHandler = RxErrorHandler 
                 .builder()
                 .with(this)
-                .responseErrorListener(new ResponseErroListener() {
+                .responseErrorListener(new ResponseErrorListener() {
                     @Override
                     public void handleResponseError(Context context, Throwable t) {
                         Log.w(TAG, "error handle");
+                        if (t instanceof UnknownHostException) {
+                            //Do something
+                        }else if (t instanceof SocketTimeoutException) {
+                            //Do something
+                        }//Handle other Exception
                     } 
                 }).build();
 ```
 
-## Step 3
+### Step 2
 
-```
+``` java
   Observable
             .error(new Exception("erro"))
             .retryWhen(new RetryWithDelay(3, 2))//retry(http connect timeout) 
@@ -46,6 +46,12 @@ dependencies {
                     }
 
                 });
+```
+
+## ProGuard
+```
+ -keep class me.jessyan.rxerrorhandler.** { *; }
+ -keep interface me.jessyan.rxerrorhandler.** { *; }
 ```
 
 ## About Me
