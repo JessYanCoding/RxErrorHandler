@@ -15,31 +15,30 @@
  */
 package me.jessyan.rxerrorhandler.handler;
 
-import io.reactivex.Observer;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
 import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.Disposable;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 
 /**
  * ================================================
- * Created by JessYan on 9/2/2016 14:41
+ * Created by JessYan on 9/22/2017 15:10
  * Contact with <mailto:jess.yan.effort@gmail.com>
  * Follow me on <https://github.com/JessYanCoding>
  * ================================================
  */
-public abstract class ErrorHandleSubscriber<T> implements Observer<T> {
+public abstract class ErrorHandleSubscriberOfFlowable<T> implements Subscriber<T> {
     private ErrorHandlerFactory mHandlerFactory;
 
-    public ErrorHandleSubscriber(RxErrorHandler rxErrorHandler){
+    public ErrorHandleSubscriberOfFlowable(RxErrorHandler rxErrorHandler){
         this.mHandlerFactory = rxErrorHandler.getHandlerFactory();
     }
 
-
     @Override
-    public void onSubscribe(@NonNull Disposable d) {
+    public void onSubscribe(Subscription s) {
 
     }
-
 
     @Override
     public void onComplete() {

@@ -28,8 +28,6 @@ import java.net.UnknownHostException;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener;
 
-import static android.content.ContentValues.TAG;
-
 /**
  * ================================================
  * Created by JessYan on 22/09/2017 15:01
@@ -38,7 +36,7 @@ import static android.content.ContentValues.TAG;
  * ================================================
  */
 public class App extends Application {
-
+    private final String TAG = getClass().getSimpleName();
     private RxErrorHandler mRxErrorHandler;
 
     @Override

@@ -18,10 +18,13 @@ package me.jessyan.rxerrorhandler.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
+import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriberOfFlowable;
 import me.jessyan.rxerrorhandler.handler.RetryWithDelay;
+import me.jessyan.rxerrorhandler.handler.RetryWithDelayOfFlowable;
 
 /**
  * ================================================
@@ -48,5 +51,16 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+
+        Flowable //Backpressure
+                .error(new Exception("Error"))
+                .retryWhen(new RetryWithDelayOfFlowable(3, 2))//retry(http connect timeout)
+                .subscribe(new ErrorHandleSubscriberOfFlowable<Object>(rxErrorHandler) {
+                    @Override
+                    public void onNext(Object o) {
+
+                    }
+                });
+
     }
 }
