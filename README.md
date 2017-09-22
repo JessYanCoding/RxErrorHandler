@@ -14,8 +14,8 @@ compile 'me.jessyan:rxerrorhandler:2.0.2' //rxjava2
 compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
 ```
 
-## Usage
-### Step 1
+## Initialization
+
 ``` java
   RxErrorHandler rxErrorHandler = RxErrorHandler 
                 .builder()
@@ -23,21 +23,23 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
                 .responseErrorListener(new ResponseErrorListener() {
                     @Override
                     public void handleResponseError(Context context, Throwable t) {
-                        Log.w(TAG, "error handle");
                         if (t instanceof UnknownHostException) {
-                            //Do something
-                        }else if (t instanceof SocketTimeoutException) {
-                            //Do something
-                        }//Handle other Exception
-                    } 
-                }).build();
+                            //do something ...
+                        } else if (t instanceof SocketTimeoutException) {
+                            //do something ...
+                        } else {
+                            //handle other Exception ...
+                        }
+                        Log.w(TAG, "Error handle");
+                    }
+                }).build(); //
 ```
 
-### Step 2
+## Usage
 
 ``` java
   Observable
-            .error(new Exception("erro"))
+            .error(new Exception("Error"))
             .retryWhen(new RetryWithDelay(3, 2))//retry(http connect timeout) 
             .subscribe(new ErrorHandleSubscriber<Object>(rxErrorHandler) {
                     @Override
@@ -48,11 +50,6 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
                 });
 ```
 
-## ProGuard
-```
- -keep class me.jessyan.rxerrorhandler.** { *; }
- -keep interface me.jessyan.rxerrorhandler.** { *; }
-```
 
 ## About Me
 * **Email**: <jess.yan.effort@gmail.com>  

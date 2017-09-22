@@ -15,3 +15,6 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-keep class me.jessyan.rxerrorhandler.** { *; }
+-keep interface me.jessyan.rxerrorhandler.** { *; }
