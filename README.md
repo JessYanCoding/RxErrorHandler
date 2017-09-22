@@ -32,7 +32,7 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
                         }
                         Log.w(TAG, "Error handle");
                     }
-                }).build(); //
+                }).build();
 ```
 
 ## Usage
