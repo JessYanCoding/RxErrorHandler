@@ -23,8 +23,8 @@ import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 /**
  * ================================================
  * Created by JessYan on 9/2/2016 14:41
- * Contact with <mailto:jess.yan.effort@gmail.com>
- * Follow me on <https://github.com/JessYanCoding>
+ * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
+ * <a href="https://github.com/JessYanCoding">Follow me</a>
  * ================================================
  */
 public abstract class ErrorHandleSubscriber<T> implements Observer<T> {

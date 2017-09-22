@@ -28,8 +28,8 @@ import io.reactivex.functions.Function;
 /**
  * ================================================
  * Created by JessYan on 9/22/2017 15:25
- * Contact with <mailto:jess.yan.effort@gmail.com>
- * Follow me on <https://github.com/JessYanCoding>
+ * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
+ * <a href="https://github.com/JessYanCoding">Follow me</a>
  * ================================================
  */
 public class RetryWithDelayOfFlowable implements
