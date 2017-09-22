@@ -1,9 +1,15 @@
 package me.jessyan.rxerrorhandler.demo;
 
 import android.content.Context;
+import android.net.ParseException;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+
+import org.json.JSONException;
+
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
 
 import io.reactivex.Observable;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
@@ -19,19 +25,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         RxErrorHandler rxErrorHandler = RxErrorHandler
                 .builder()
                 .with(this)
                 .responseErrorListener(new ResponseErrorListener() {
                     @Override
                     public void handleResponseError(Context context, Throwable t) {
-                        Log.w(TAG, "error handle");
+                        if (t instanceof UnknownHostException) {
+                            //do something ...
+                        } else if (t instanceof SocketTimeoutException) {
+                            //do something ...
+                        } else if (t instanceof ParseException || t instanceof JSONException) {
+                            //do something ...
+                        }
+                        Log.w(TAG, "Error handle");
                     }
                 }).build();
 
         Observable
-                .error(new Exception("erro"))
+                .error(new Exception("Error"))
                 .retryWhen(new RetryWithDelay(3, 2))//retry(http connect timeout)
                 .subscribe(new ErrorHandleSubscriber<Object>(rxErrorHandler) {
                     @Override
