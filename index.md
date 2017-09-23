@@ -1,6 +1,6 @@
 # RxErrorHandler
-[ ![Bintray](https://img.shields.io/badge/bintray-v2.0.2-brightgreen.svg) ](https://bintray.com/jessyancoding/maven/rxerrorhandler/2.0.2/link)
-[ ![Build Status](https://travis-ci.org/JessYanCoding/RxErrorHandler.svg?branch=master) ](https://travis-ci.org/JessYanCoding/RxErrorHandler)
+[ ![Bintray](https://img.shields.io/badge/bintray-v2.1.0-brightgreen.svg) ](https://bintray.com/jessyancoding/maven/rxerrorhandler/2.1.0/link)
+[ ![Build Status](https://travis-ci.org/JessYanCoding/RxErrorHandler.svg?branch=2.x) ](https://travis-ci.org/JessYanCoding/RxErrorHandler)
 [ ![API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat-square) ](https://developer.android.com/about/versions/android-4.0.3.html)
 [ ![License](http://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square) ](http://www.apache.org/licenses/LICENSE-2.0)
 
@@ -9,13 +9,13 @@
 ## Download
 
 ``` gradle
-compile 'me.jessyan:rxerrorhandler:2.0.2' //rxjava2
+compile 'me.jessyan:rxerrorhandler:2.1.0' //rxjava2
 
 compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
 ```
 
-## Usage
-### Step 1
+## Initialization
+
 ``` java
   RxErrorHandler rxErrorHandler = RxErrorHandler 
                 .builder()
@@ -23,21 +23,23 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
                 .responseErrorListener(new ResponseErrorListener() {
                     @Override
                     public void handleResponseError(Context context, Throwable t) {
-                        Log.w(TAG, "error handle");
                         if (t instanceof UnknownHostException) {
-                            //Do something
-                        }else if (t instanceof SocketTimeoutException) {
-                            //Do something
-                        }//Handle other Exception
-                    } 
+                            //do something ...
+                        } else if (t instanceof SocketTimeoutException) {
+                            //do something ...
+                        } else {
+                            //handle other Exception ...
+                        }
+                        Log.w(TAG, "Error handle");
+                    }
                 }).build();
 ```
 
-### Step 2
+## Usage
 
 ``` java
   Observable
-            .error(new Exception("erro"))
+            .error(new Exception("Error"))
             .retryWhen(new RetryWithDelay(3, 2))//retry(http connect timeout) 
             .subscribe(new ErrorHandleSubscriber<Object>(rxErrorHandler) {
                     @Override
@@ -46,13 +48,19 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
                     }
 
                 });
+
+  //Backpressure
+  Flowable
+          .error(new Exception("Error"))
+          .retryWhen(new RetryWithDelayOfFlowable(3, 2))//retry(http connect timeout)
+          .subscribe(new ErrorHandleSubscriberOfFlowable<Object>(rxErrorHandler) {
+                   @Override
+               public void onNext(Object o) {
+
+                  }
+               });
 ```
 
-## ProGuard
-```
- -keep class me.jessyan.rxerrorhandler.** { *; }
- -keep interface me.jessyan.rxerrorhandler.** { *; }
-```
 
 ## About Me
 * **Email**: <jess.yan.effort@gmail.com>  
