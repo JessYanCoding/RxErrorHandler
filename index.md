@@ -68,7 +68,7 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
 * **掘金**: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
 * **简书**: <http://www.jianshu.com/u/1d0c0bc634db>  
 
-## License   
+## License
 ``` 
  Copyright 2016, jessyan               
   
