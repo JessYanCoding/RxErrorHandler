@@ -62,7 +62,7 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
 ```
 
 
-## About Me
+## About Me 
 * **Email**: <jess.yan.effort@gmail.com>  
 * **Home**: <http://jessyan.me>
 * **掘金**: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
