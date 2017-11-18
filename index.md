@@ -37,7 +37,7 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
 
 ## Usage
 
-``` java
+``` java 
   Observable
             .error(new Exception("Error"))
             .retryWhen(new RetryWithDelay(3, 2))//retry(http connect timeout) 
