@@ -8,7 +8,7 @@
 
 ## Download
 
-``` gradle
+```gradle
 compile 'me.jessyan:rxerrorhandler:2.1.0' //rxjava2
 
 compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
@@ -16,7 +16,7 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
 
 ## Initialization
 
-``` java
+```java
   RxErrorHandler rxErrorHandler = RxErrorHandler 
                 .builder()
                 .with(this)
@@ -37,7 +37,7 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
 
 ## Usage
 
-``` java
+```java
   Observable
             .error(new Exception("Error"))
             .retryWhen(new RetryWithDelay(3, 2))//retry(http connect timeout) 
