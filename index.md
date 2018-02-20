@@ -69,8 +69,8 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
 * **简书**: <http://www.jianshu.com/u/1d0c0bc634db>  
 
 ## License
-```
- Copyright 2016, jessyan              
+``` 
+ Copyright 2016, jessyan              
   
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
