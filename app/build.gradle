@@ -24,9 +24,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:27.0.2'
-    compile 'io.reactivex.rxjava2:rxjava:2.1.10'
-//    compile 'me.jessyan:rxerrorhandler:2.1.0'
-    compile project(':rxerrorhandler')
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.10'
+//    implementation 'me.jessyan:rxerrorhandler:2.1.0'
+    implementation project(':rxerrorhandler')
 }
