@@ -11,9 +11,9 @@
 ## Download
 
 ``` gradle
-compile 'me.jessyan:rxerrorhandler:2.1.1' //rxjava2
+implementation 'me.jessyan:rxerrorhandler:2.1.1' //rxjava2
 
-compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
+implementation 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
 ```
 
 ## Initialization
