@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2017 JessYan
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +30,7 @@ import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 public abstract class ErrorHandleSubscriber<T> implements Observer<T> {
     private ErrorHandlerFactory mHandlerFactory;
 
-    public ErrorHandleSubscriber(RxErrorHandler rxErrorHandler){
+    public ErrorHandleSubscriber(RxErrorHandler rxErrorHandler) {
         this.mHandlerFactory = rxErrorHandler.getHandlerFactory();
     }
 

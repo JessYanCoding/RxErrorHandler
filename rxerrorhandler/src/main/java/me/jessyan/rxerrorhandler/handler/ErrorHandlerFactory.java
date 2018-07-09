@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2017 JessYan
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,7 +37,8 @@ public class ErrorHandlerFactory {
     }
 
     /**
-     *  处理错误
+     * 处理错误
+     *
      * @param throwable
      */
     public void handleError(Throwable throwable) {
