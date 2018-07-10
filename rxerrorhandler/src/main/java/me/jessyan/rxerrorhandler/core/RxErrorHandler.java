@@ -52,11 +52,15 @@ public class RxErrorHandler {
         }
 
         public Builder with(Context context) {
+            if (context == null)
+                throw new NullPointerException("Context cannot be null");
             this.context = context;
             return this;
         }
 
         public Builder responseErrorListener(ResponseErrorListener responseErrorListener) {
+            if (responseErrorListener == null)
+                throw new NullPointerException("responseErrorListener cannot be null");
             this.mResponseErrorListener = responseErrorListener;
             return this;
         }
