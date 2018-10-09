@@ -18,7 +18,7 @@ compile 'me.jessyan:rxerrorhandler:1.0.1' //rxjava1
 
 ## Initialization
 
-```java 
+```java
   RxErrorHandler rxErrorHandler = RxErrorHandler 
                 .builder()
                 .with(this)
