@@ -21,9 +21,9 @@ import org.reactivestreams.Publisher;
 
 import java.util.concurrent.TimeUnit;
 
-import io.reactivex.Flowable;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.functions.Function;
+import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.functions.Function;
 
 /**
  * ================================================
