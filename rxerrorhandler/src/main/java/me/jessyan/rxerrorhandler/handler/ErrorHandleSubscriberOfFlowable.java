@@ -18,7 +18,7 @@ package me.jessyan.rxerrorhandler.handler;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
-import io.reactivex.annotations.NonNull;
+import io.reactivex.rxjava3.annotations.NonNull;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 
 /**

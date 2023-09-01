@@ -15,11 +15,11 @@
  */
 package me.jessyan.rxerrorhandler.demo;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-import io.reactivex.Flowable;
-import io.reactivex.Observable;
+import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.core.Observable;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriberOfFlowable;
@@ -33,7 +33,7 @@ import me.jessyan.rxerrorhandler.handler.RetryWithDelayOfFlowable;
  * <a href="https://github.com/JessYanCoding">Follow me</a>
  * ================================================
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     private final String TAG = getClass().getSimpleName();
 
     @Override

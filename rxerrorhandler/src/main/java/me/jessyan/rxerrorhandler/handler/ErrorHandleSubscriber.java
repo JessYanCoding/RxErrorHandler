@@ -15,9 +15,9 @@
  */
 package me.jessyan.rxerrorhandler.handler;
 
-import io.reactivex.Observer;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.disposables.Disposable;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 
 /**
